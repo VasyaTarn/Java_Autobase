@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>History</title>
+</head>
+<body>
+<th:block th:include="/fragments/menu"></th:block>
+
+<h1>History</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Driver name</th>
+        <th>Driver phone number</th>
+        <th>City name</th>
+        <th>Cargo driver experience</th>
+        <th>Cargo price</th>
+        <th>Cargo weight</th>
+        <th>Car name</th>
+        <th>Car carrying</th>
+        <th>Start date</th>
+        <th>End date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="history : ${histories}">
+        <td th:text="${history.id}"></td>
+        <td th:text="${history.driverName}"></td>
+        <td th:text="${history.driverNumTel}"></td>
+        <td th:text="${history.city.name}"></td>
+        <td th:text="${history.cargoDriverExp}"></td>
+        <td th:text="${history.cargoPrice}"></td>
+        <td th:text="${history.cargoWeight}"></td>
+        <td th:text="${history.carName}"></td>
+        <td th:text="${history.carCarrying}"></td>
+        <td th:text="${history.startDate}"></td>
+        <td th:text="${history.endDate}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

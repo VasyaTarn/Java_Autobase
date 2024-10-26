@@ -1,0 +1,22 @@
+<head>
+    <link rel="stylesheet" th:href="@{/main.css}" />
+</head>
+<div class="menu-link" xmlns:th="http://www.thymeleaf.org">
+    <a th:href="@{/}" th:text="'Home'"></a>
+
+    <a th:href="@{/create-order}" th:if="${#authorization.expression('hasRole(''ROLE_USER'') or hasRole(''ROLE_ADMIN'')')}">Add order</a>
+    <a th:href="@{/orders}" th:if="${#authorization.expression('hasRole(''ROLE_USER'') or hasRole(''ROLE_ADMIN'')')}">Orders</a>
+    <a th:href="@{/flights}" th:if="${#authorization.expression('hasRole(''ROLE_USER'') or hasRole(''ROLE_ADMIN'')')}">Flights</a>
+
+    <a th:href="@{/create-driver}" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Add driver</a>
+    <a th:href="@{/create-car}" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Add car</a>
+    <a th:href="@{/cargotypes}" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Cargo Types</a>
+    <a th:href="@{/cars}" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Cars</a>
+    <a th:href="@{/cities}" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Cities</a>
+    <a th:href="@{/drivers}" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">Drivers</a>
+    <a th:href="@{/histories}" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">History</a>
+
+    <a th:href="@{/register}" th:if="${#authorization.expression('isAnonymous()')}">Register</a>
+    <a th:href="@{/login}" th:if="${#authorization.expression('isAnonymous()')}">Login</a>
+    <a th:href="@{/logout}" th:if="${#authorization.expression('isAuthenticated()')}">Logout</a>
+</div>

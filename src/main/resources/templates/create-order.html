@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Order</title>
+</head>
+<body>
+<th:block th:include="/fragments/menu"></th:block>
+
+<h1>Create New Order</h1>
+
+<form th:action="@{/create-order}" th:object="${order}" method="post">
+    <div>
+        <label for="city">City:</label>
+        <select id="city" th:field="*{city}" required>
+            <option value="" disabled selected>Select a city</option>
+            <option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}"></option>
+        </select>
+    </div>
+
+    <div>
+        <label for="cargoType">Cargo Type:</label>
+        <select id="cargoType" th:field="*{cargoType}" required>
+            <option value="" disabled selected>Select cargo type</option>
+            <option th:each="cargoType : ${cargoTypes}" th:value="${cargoType.id}" th:text="${cargoType.name}"></option>
+        </select>
+    </div>
+
+    <div>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" th:field="*{weight}" required />
+    </div>
+
+    <div>
+        <label for="isFlight">Is Flight:</label>
+        <input type="checkbox" id="isFlight" th:field="*{isFlight}" />
+    </div>
+
+    <div>
+        <button type="submit">Create Order</button>
+    </div>
+</form>
+</body>
+</html>

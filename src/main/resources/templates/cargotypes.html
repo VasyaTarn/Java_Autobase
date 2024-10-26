@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Cargo Types</title>
+</head>
+<body>
+<th:block th:include="/fragments/menu"></th:block>
+
+<h1>All Cargo Types</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Driver experience</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cargotype : ${cargotypes}">
+        <td th:text="${cargotype.id}"></td>
+        <td th:text="${cargotype.name}"></td>
+        <td th:text="${cargotype.driverExp}"></td>
+        <td th:text="${cargotype.price}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

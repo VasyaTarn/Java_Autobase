@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5435/autobase-database
+    username: vst
+    password: admin
+    driverClassName: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    user: vst
+    password: admin
+    schemas: public
+    url: jdbc:postgresql://localhost:5435/autobase-database
+
+data:
+  cargotypes: src/main/resources/cargotypes.txt
+  cars: src/main/resources/cars.txt
+  cities: src/main/resources/cities.txt
+  firstnames: src/main/resources/firstnames.txt
+  lastnames: src/main/resources/lastnames.txt

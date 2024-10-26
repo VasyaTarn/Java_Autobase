@@ -1,0 +1,20 @@
+Furniture
+Electronics
+Machinery
+Construction Materials
+Perishable Goods
+Clothing
+Pharmaceuticals
+Automobile Parts
+Chemicals
+Agricultural Products
+Household Goods
+Metals and Ores
+Wood and Timber
+Glassware
+Textiles
+Livestock
+Food Products
+Oil and Gas
+Coal
+Paper Products

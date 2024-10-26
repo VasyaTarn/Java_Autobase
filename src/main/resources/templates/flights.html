@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Flights</title>
+</head>
+<body>
+<th:block th:include="/fragments/menu"></th:block>
+
+<h1>All Flights</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Order ID</th>
+        <th>Car name</th>
+        <th>Driver name</th>
+        <th>Days on trip</th>
+        <th>Start date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="flight : ${flights}">
+        <td th:text="${flight.id}"></td>
+        <td th:text="${flight.order.id}"></td>
+        <td th:text="${flight.car.name}"></td>
+        <td th:text="${flight.driver.name + ' ' + flight.driver.surname}"></td>
+        <td th:text="${flight.countDayWay}"></td>
+        <td th:text="${flight.startDate}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

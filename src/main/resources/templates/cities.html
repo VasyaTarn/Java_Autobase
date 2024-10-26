@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Cities</title>
+</head>
+<body>
+<th:block th:include="/fragments/menu"></th:block>
+
+<h1>All Cities</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Destination</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="city : ${cities}">
+        <td th:text="${city.id}"></td>
+        <td th:text="${city.name}"></td>
+        <td th:text="${city.destination}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

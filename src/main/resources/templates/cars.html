@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Cars</title>
+</head>
+<body>
+<th:block th:include="/fragments/menu"></th:block>
+
+<h1>All Cars</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Carrying</th>
+        <th>Free</th>
+        <th>Broke</th>
+        <th>Time to repair</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.name}"></td>
+        <td th:text="${car.carrying}"></td>
+        <td th:text="${car.isFree ? 'Yes' : 'No'}"></td>
+        <td th:text="${car.getBroke() ? 'Yes' : 'No'}"></td>
+        <td th:text="${car.timeToRepair}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
